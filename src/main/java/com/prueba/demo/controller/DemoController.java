@@ -40,10 +40,22 @@ public class DemoController {
  
 	@ApiOperation(value = "lista persona")
 	@RequestMapping(value = "/getListaPersona", method = RequestMethod.GET)
-	public ResponseEntity<Object> listarProducto() {
+	public ResponseEntity<Object> getListaPersona() {
 		
 		try {
 			return ResponseEntity.ok(demoService.getListaPersona());
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+			return ResponseEntity.ok(e);
+		}
+	}
+
+	@ApiOperation(value = "lista persona procedure")
+	@RequestMapping(value = "/getListaPersonaProcedure", method = RequestMethod.GET)
+	public ResponseEntity<Object> getListaPersonaProcedure() {
+		
+		try {
+			return ResponseEntity.ok(demoService.getListaPersonaProcedure());
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 			return ResponseEntity.ok(e);

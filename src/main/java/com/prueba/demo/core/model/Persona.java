@@ -8,8 +8,9 @@ public class Persona {
      private String apellidoPaterno;
      private String apellidoMaterno;
      private String direccion;
-     private String nombre;
-     
+     private String nombre;    
+ 
+ 
     public Integer getIdPersona() {
         return idPersona;
     }
@@ -47,6 +48,25 @@ public class Persona {
         this.nombre = nombre;
     }
 
+    public Persona() {
+    }
+    @Override
+    public String toString() {
+        return "Persona [apellidoMaterno=" + apellidoMaterno + ", apellidoPaterno=" + apellidoPaterno + ", direccion="
+                + direccion + ", dni=" + dni + ", idPersona=" + idPersona + ", nombre=" + nombre + "]";
+    }
+    public Persona(Integer idPersona, String dni, String apellidoPaterno, String apellidoMaterno, String direccion,
+            String nombre, String resultado) {
+        this.idPersona = idPersona;
+        this.dni = dni;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.direccion = direccion;
+        this.nombre = nombre;
+    }
+ 
+
+    
 
 
     

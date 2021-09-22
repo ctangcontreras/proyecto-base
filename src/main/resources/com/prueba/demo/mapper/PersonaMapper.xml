@@ -8,6 +8,7 @@
         <result property="apellidoMaterno"  column="APELLIDO_MATERNO" />
         <result property="direccion"  	 	column="DIRECCION" />
         <result property="nombre"  	 		column="NOMBRE" />
+  
 	</resultMap>
 
 	<select id="getListaPersona" resultMap="resPersona">
@@ -20,6 +21,12 @@
 				NOMBRE
 			FROM PERSONA.PERSONA
 	</select>
+
+	<select id="getListaPersonaProcedure"  statementType="CALLABLE" parameterType="java.util.Map">
+  		{ call PERSONA.PKG_PERSONA.SP_LISTA(
+  			#{resultado, jdbcType=CURSOR, javaType=ResultSet, mode=OUT, resultMap=resPersona}
+  		)}
+  	</select>
 
 	 
 </mapper>
